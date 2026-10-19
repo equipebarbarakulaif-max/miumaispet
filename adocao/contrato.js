@@ -80,13 +80,14 @@ function montarContrato(d, cfg, extra) {
     ' · <b>Castrado(a):</b> ' + e(d.castrado) + '</p>' +
     (d.observacoes ? '<p><b>Observações:</b> ' + e(d.observacoes) + '</p>' : '') +
     '<p><b>Local da adoção:</b> ' + e(d.petshop) + '.</p>' +
-    '<p><b>Vacinação no dia da adoção:</b> o animal recebe a vacina ' + e(vacina) + ' no próprio local da adoção, no momento da entrega ' +
-    'ao(à) ADOTANTE, que recebe também a carteira de vacinação. As próximas doses e os reforços anuais ficam sob responsabilidade do(a) ADOTANTE.</p>' +
+    '<p><b>Vacinação:</b> a vacinação do animal é <b>obrigação do(a) ADOTANTE</b>, a partir da data da adoção. O(a) ADOTANTE se compromete ' +
+    'a aplicar a vacina ' + e(vacina) + ', a antirrábica e todas as doses e reforços anuais indicados pelo veterinário, mantendo a carteira ' +
+    'de vacinação em dia e apresentando-a ao PROJETO sempre que solicitado.</p>' +
 
     '<h2>3. Compromissos do(a) adotante</h2>' +
     '<p>Ao adotar, o(a) ADOTANTE assume total responsabilidade pelo animal e se compromete a:</p><ol>' +
     '<li>Garantir o bem-estar físico e emocional do animal, oferecendo abrigo, alimentação adequada, água limpa, higiene, atenção e carinho.</li>' +
-    '<li>Manter as vacinas e a vermifugação em dia e levá-lo ao veterinário sempre que necessário, inclusive em caso de doença ou acidente.</li>' +
+    '<li>Vacinar o animal e manter as vacinas e a vermifugação em dia, conforme o item 2, e levá-lo ao veterinário sempre que necessário, inclusive em caso de doença ou acidente.</li>' +
     '<li>Manter o animal em ambiente limpo, arejado e protegido do sol, da chuva e do frio.</li>' +
     '<li>Não manter o animal preso em correntes ou confinado em espaços pequenos.</li>' +
     '<li>Não permitir que o animal tenha acesso livre à rua e ' + regraPasseio + '.</li>' +
