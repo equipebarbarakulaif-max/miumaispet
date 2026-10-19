@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Miu Mais Pet | Adoção de cães e gatos em São Paulo e Baixada Santista</title>
+<meta name="description" content="Projeto independente de resgate e adoção responsável de cães e gatos em São Paulo e na Baixada Santista há quase 10 anos. Adote, doe via Pix ou seja lar temporário.">
+<meta property="og:title" content="Miu Mais Pet | Adoção de cães e gatos">
+<meta property="og:description" content="Há quase 10 anos encontrando um lar para cães e gatos em São Paulo e na Baixada Santista.">
+<meta property="og:image" content="https://miumaispet.com.br/img/compartilhar.png">
+<meta property="og:url" content="https://miumaispet.com.br/">
+<link rel="canonical" href="https://miumaispet.com.br/">
+<meta name="theme-color" content="#1E4FA0">
+<link rel="icon" type="image/png" href="img/simbolo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --azul: #1E4FA0; --azul-escuro: #163B79; --amarelo: #FFC531; --coral: #FF6F59; --marinho: #13254A;
+    --gelo: #EEF4FD; --creme: #FFF8E6; --branco: #FFFFFF; --sub: #4D5B78;
+    --display: 'Baloo 2', 'Arial Rounded MT Bold', system-ui, sans-serif;
+    --corpo: 'Nunito', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    --gutter: max(20px, env(safe-area-inset-left, 0px));
+    --gutter-d: max(20px, env(safe-area-inset-right, 0px));
+  }
+  * { box-sizing: border-box; }
+  [hidden] { display: none !important; }
+  html { scroll-behavior: smooth; scroll-padding-top: 76px; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { animation: none !important; transition: none !important; } }
+  body { margin: 0; font-family: var(--corpo); color: var(--marinho); background: var(--branco); font-size: 17px; line-height: 1.6; }
+  img { max-width: 100%; display: block; }
+  a { color: inherit; }
+  h1, h2, h3 { font-family: var(--display); font-weight: 800; line-height: 1.05; margin: 0; text-wrap: balance; }
+  h2 { font-size: clamp(34px, 6vw, 52px); }
+  h3 { font-size: 24px; }
+  .cont { max-width: 1120px; margin: 0 auto; padding-left: var(--gutter); padding-right: var(--gutter-d); }
+  .eyebrow { font-weight: 800; font-size: 14px; letter-spacing: .12em; text-transform: uppercase; color: var(--coral); margin-bottom: 10px; }
+  .lead { font-size: 19px; color: var(--sub); max-width: 58ch; margin: 14px 0 0; }
+
+  .btn { display: inline-flex; align-items: center; gap: 8px; font: 800 17px var(--corpo); text-decoration: none; border: 0; cursor: pointer;
+         padding: 14px 22px; border-radius: 14px; transition: transform .15s, box-shadow .15s; }
+  .btn:hover { transform: translateY(-2px); }
+  .btn:focus-visible, a:focus-visible, button:focus-visible { outline: 3px solid var(--coral); outline-offset: 3px; }
+  .btn-amarelo { background: var(--amarelo); color: var(--marinho); box-shadow: 0 4px 0 #D9A21C; }
+  .btn-azul { background: var(--azul); color: var(--branco); box-shadow: 0 4px 0 var(--azul-escuro); }
+  .btn-claro { background: var(--branco); color: var(--azul); box-shadow: inset 0 0 0 2px var(--azul); }
+
+  /* Topo */
+  .topo { position: sticky; top: 0; z-index: 10; background: rgba(255,255,255,.94); backdrop-filter: blur(8px);
+          border-bottom: 1px solid #E3EAF6; padding-top: env(safe-area-inset-top, 0px); }
+  .topo .cont { display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 68px; }
+  .marca { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .marca svg { width: 44px; height: 44px; }
+  .marca span { font-family: var(--display); font-weight: 800; font-size: 24px; line-height: 1; }
+  .marca b { color: var(--azul); font-weight: 800; }
+  .menu { display: flex; align-items: center; gap: 22px; }
+  .menu a { text-decoration: none; font-weight: 700; }
+  .menu a:not(.btn):hover { color: var(--azul); }
+  .menu .btn { padding: 10px 16px; font-size: 15px; }
+  @media (max-width: 760px) { .menu a:not(.btn) { display: none; } }
+
+  /* Abertura */
+  .hero { background: var(--azul); color: var(--branco); overflow: hidden; }
+  .hero .cont { display: grid; grid-template-columns: 1.1fr .9fr; gap: 32px; align-items: center; padding-block: 64px 72px; }
+  .hero h1 { font-size: clamp(42px, 7.4vw, 78px); }
+  .hero h1 em { font-style: normal; color: var(--amarelo); }
+  .hero p { font-size: 20px; opacity: .92; max-width: 46ch; margin: 18px 0 28px; }
+  .hero .acoes { display: flex; gap: 14px; flex-wrap: wrap; }
+  .hero .acoes .btn-claro { background: transparent; color: var(--branco); box-shadow: inset 0 0 0 2px rgba(255,255,255,.7); }
+  .hero-arte { position: relative; aspect-ratio: 1; max-width: 460px; width: 100%; justify-self: center; }
+  .hero-arte .bolha { position: absolute; inset: 6%; background: var(--gelo); border-radius: 46% 54% 50% 50% / 52% 46% 54% 48%; }
+  .hero-arte svg.mascote { position: absolute; inset: 14%; width: 72%; height: 72%; filter: drop-shadow(0 12px 0 rgba(19,37,74,.18)); }
+  .hero-arte .cor { position: absolute; width: 16%; animation: flutua 4s ease-in-out infinite; }
+  .hero-arte .c1 { top: 2%; right: 8%; } .hero-arte .c2 { bottom: 6%; left: 0; width: 11%; animation-delay: -2s; }
+  @keyframes flutua { 50% { transform: translateY(-10px) rotate(-6deg); } }
+  .selo-anos { position: absolute; left: 2%; top: 10%; background: var(--coral); color: var(--branco); border-radius: 50%; width: 27%; aspect-ratio: 1;
+               display: grid; place-items: center; text-align: center; font-family: var(--display); font-weight: 800; line-height: .9;
+               font-size: clamp(22px, 3.4vw, 34px); transform: rotate(-10deg); }
+  .selo-anos small { display: block; font-family: var(--corpo); font-size: .38em; letter-spacing: .14em; margin-top: 4px; }
+  @media (max-width: 860px) {
+    .hero .cont { grid-template-columns: 1fr; padding-block: 44px 56px; }
+    .hero-arte { max-width: 250px; order: -1; }
+  }
+
+  section { padding-block: 88px; }
+  @media (max-width: 760px) { section { padding-block: 64px; } }
+
+  /* Números */
+  .numeros { background: var(--marinho); color: var(--branco); }
+  .numeros .cont { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; padding-block: 34px; }
+  .numero { display: flex; flex-direction: column; gap: 2px; }
+  .numero strong { font-family: var(--display); font-weight: 800; font-size: clamp(38px, 5.5vw, 56px); line-height: 1; color: var(--amarelo); }
+  .numero span { font-weight: 700; opacity: .9; }
+  @media (max-width: 860px) { .numeros .cont { grid-template-columns: 1fr 1fr; gap: 22px 18px; } }
+
+  /* Quem está por trás */
+  .quem .cont { display: grid; grid-template-columns: .85fr 1.15fr; gap: 56px; align-items: center; }
+  .quem p { color: var(--sub); max-width: 60ch; }
+  .quem .lead { color: var(--marinho); font-weight: 700; }
+  .quem-foto { margin: 0; position: relative; max-width: 420px; width: 100%; justify-self: center; }
+  .quem-foto img, .quem-sem-foto { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 28px; background: var(--gelo);
+                                    box-shadow: 14px 14px 0 var(--amarelo); }
+  .quem-sem-foto { display: grid; place-items: center; }
+  .quem-sem-foto svg { width: 60%; }
+  .quem-foto figcaption { position: absolute; left: 16px; bottom: 16px; background: var(--azul); color: var(--branco);
+                          font-weight: 800; font-size: 14px; padding: 7px 14px; border-radius: 99px; }
+  @media (max-width: 860px) { .quem .cont { grid-template-columns: 1fr; gap: 36px; } .quem-foto { max-width: 320px; } }
+
+  .citacao { margin: 24px 0 0; padding: 18px 22px; background: var(--amarelo); border-radius: 18px;
+             font-family: var(--display); font-weight: 800; font-size: clamp(22px, 2.6vw, 28px); line-height: 1.15; color: var(--marinho); }
+  .citacao cite { display: block; margin-top: 8px; font-family: var(--corpo); font-style: normal; font-size: 15px; font-weight: 700; }
+
+  /* Como adotar */
+  .passos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 40px; counter-reset: passo; }
+  .passo { background: var(--gelo); border-radius: 22px; padding: 26px 24px; position: relative; }
+  .passo::before { counter-increment: passo; content: counter(passo); font-family: var(--display); font-weight: 800; font-size: 26px; line-height: 1;
+                   display: grid; place-items: center; width: 50px; height: 50px; border-radius: 50%; background: var(--azul); color: var(--amarelo); margin-bottom: 16px; }
+  .passo p { margin: 8px 0 0; color: var(--sub); }
+  .aviso-castra { margin-top: 28px; background: var(--creme); border-radius: 18px; padding: 18px 22px; display: flex; gap: 14px; align-items: flex-start; }
+  .aviso-castra svg { flex: 0 0 28px; width: 28px; height: 28px; margin-top: 2px; }
+  .aviso-castra p { margin: 0; }
+  .adote-acoes { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 28px; }
+  @media (max-width: 860px) { .passos { grid-template-columns: 1fr; } }
+
+  /* Doe */
+  .doe { background: var(--amarelo); position: relative; }
+  .doe .cont { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+  .doe .lead { color: var(--marinho); opacity: .85; }
+  .destinos { list-style: none; padding: 0; margin: 24px 0 0; display: grid; gap: 12px; }
+  .destinos li { display: flex; gap: 12px; align-items: center; font-weight: 700; font-size: 18px; }
+  .destinos li span { width: 40px; height: 40px; border-radius: 12px; background: var(--marinho); display: grid; place-items: center; flex: 0 0 auto; }
+  .destinos svg { width: 22px; height: 22px; }
+  .pix { background: var(--branco); border-radius: 26px; padding: 28px; box-shadow: 0 10px 0 #D9A21C; min-width: 0; }
+  .pix h3 { display: flex; align-items: center; gap: 10px; }
+  .pix-valores { display: flex; gap: 8px; flex-wrap: wrap; margin: 18px 0 6px; }
+  .pix-valores button { font: 800 16px var(--corpo); border: 2px solid #D5DEEE; background: var(--branco); color: var(--marinho);
+                        border-radius: 12px; padding: 9px 14px; cursor: pointer; }
+  .pix-valores button[aria-pressed="true"] { background: var(--azul); border-color: var(--azul); color: var(--branco); }
+  .pix-outro { display: none; margin-top: 8px; }
+  .pix-outro.mostrar { display: flex; align-items: center; gap: 8px; }
+  .pix-outro input { font: 700 17px var(--corpo); width: 140px; padding: 9px 12px; border: 2px solid #D5DEEE; border-radius: 12px; color: var(--marinho); }
+  .pix-qr { display: grid; grid-template-columns: 170px 1fr; gap: 20px; align-items: center; margin-top: 18px; }
+  .pix-qr .qr { background: var(--branco); border: 2px solid #E3EAF6; border-radius: 16px; padding: 8px; aspect-ratio: 1; }
+  .pix-qr .qr svg { width: 100%; height: 100%; display: block; }
+  .chave { font-size: 14px; color: var(--sub); }
+  .chave strong { display: block; font-size: 20px; color: var(--marinho); font-variant-numeric: tabular-nums; letter-spacing: .02em; margin: 2px 0 10px; user-select: all; }
+  .pix .btn { width: 100%; justify-content: center; margin-top: 8px; }
+  .pix .ok { color: #1F7A3A; font-weight: 800; font-size: 14px; min-height: 22px; margin-top: 6px; text-align: center; }
+  .pix-nota { font-size: 13px; color: var(--sub); margin: 14px 0 0; }
+  @media (max-width: 860px) { .doe .cont { grid-template-columns: 1fr; } }
+  @media (max-width: 420px) { .pix-qr { grid-template-columns: 1fr; } .pix-qr .qr { max-width: 220px; margin: 0 auto; width: 100%; } .pix { padding: 22px 18px; } }
+
+  /* Ajude */
+  .formas { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-top: 40px; }
+  .forma { border: 2px solid #E3EAF6; border-radius: 22px; padding: 24px 20px; }
+  .forma .ico { width: 56px; height: 56px; border-radius: 50%; display: grid; place-items: center; margin-bottom: 14px; }
+  .forma .ico svg { width: 28px; height: 28px; }
+  .forma h3 { font-size: 22px; }
+  .forma p { margin: 8px 0 0; color: var(--sub); font-size: 16px; }
+  .ajude-cta { margin-top: 28px; display: flex; gap: 14px; flex-wrap: wrap; }
+  .btn-whats { background: #1FA855; color: #fff; box-shadow: 0 4px 0 #168241; }
+  .whats-flutuante { position: fixed; right: calc(18px + env(safe-area-inset-right, 0px)); bottom: calc(18px + env(safe-area-inset-bottom, 0px)); z-index: 20;
+                     width: 60px; height: 60px; border-radius: 50%; background: #1FA855; color: #fff; display: grid; place-items: center;
+                     box-shadow: 0 6px 18px rgba(19,37,74,.28); transition: transform .15s; }
+  .whats-flutuante:hover { transform: scale(1.06); }
+  .whats-flutuante svg { width: 32px; height: 32px; }
+  @media (max-width: 960px) { .formas { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 520px) { .formas { grid-template-columns: 1fr; } }
+
+  /* Sobre */
+  .sobre { background: var(--gelo); }
+  .sobre .cont { display: grid; grid-template-columns: .8fr 1.2fr; gap: 48px; align-items: center; }
+  .sobre-arte { background: var(--azul); border-radius: 50%; aspect-ratio: 1; max-width: 360px; width: 100%; display: grid; place-items: center; justify-self: center; }
+  .sobre-arte svg { width: 70%; }
+  .sobre p { color: var(--sub); max-width: 60ch; }
+  .fatos { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 22px; }
+  .fato { background: var(--branco); border-radius: 99px; padding: 8px 16px; font-weight: 800; font-size: 15px; }
+  @media (max-width: 860px) { .sobre .cont { grid-template-columns: 1fr; } .sobre-arte { max-width: 240px; } }
+
+  /* Rodapé */
+  footer { background: var(--marinho); color: #C9D5EC; padding-block: 48px calc(36px + env(safe-area-inset-bottom, 0px)); font-size: 15px; }
+  footer .cont { display: flex; justify-content: space-between; gap: 28px; flex-wrap: wrap; align-items: flex-start; }
+  footer .marca span { color: var(--branco); } footer .marca b { color: var(--amarelo); }
+  footer p { margin: 6px 0 0; }
+  footer a { color: var(--amarelo); font-weight: 700; }
+</style>
+</head>
+<body>
+
+<header class="topo">
+  <div class="cont">
+    <a class="marca" href="#inicio" aria-label="Miu Mais Pet, início">
+      <svg viewBox="0 0 120 120" data-mascote aria-hidden="true"></svg>
+      <span>Miu <b>Mais</b> Pet</span>
+    </a>
+    <nav class="menu" aria-label="Seções">
+      <a href="#adote">Adote</a>
+      <a href="#ajude">Ajude</a>
+      <a href="#sobre">Sobre</a>
+      <a class="btn btn-amarelo" href="#doe">Doe agora</a>
+    </nav>
+  </div>
+</header>
+
+<main id="inicio">
+  <div class="hero">
+    <div class="cont">
+      <div>
+        <h1>Todo cão e gato merece <em>um lar</em>.</h1>
+        <p>Há quase 10 anos, o Miu Mais Pet resgata, cuida e encontra famílias para cães e gatos em São Paulo e na Baixada Santista.</p>
+        <div class="acoes">
+          <a class="btn btn-amarelo" href="#adote">Quero adotar</a>
+          <a class="btn btn-claro" href="#doe">Quero doar</a>
+        </div>
+      </div>
+      <div class="hero-arte" aria-hidden="true">
+        <div class="bolha"></div>
+        <svg class="mascote" viewBox="0 0 120 120" data-mascote></svg>
+        <div class="selo-anos"><div>10<small>ANOS</small></div></div>
+        <svg class="cor c1" viewBox="-10 -5 20 16"><path d="M0 10C-7 5.5-9 0-5.5-2.4-3-4-.8-2.6 0-.6.8-2.6 3-4 5.5-2.4 9 0 7 5.5 0 10z" fill="#FF6F59"/></svg>
+        <svg class="cor c2" viewBox="-10 -5 20 16"><path d="M0 10C-7 5.5-9 0-5.5-2.4-3-4-.8-2.6 0-.6.8-2.6 3-4 5.5-2.4 9 0 7 5.5 0 10z" fill="#FFFFFF"/></svg>
+      </div>
+    </div>
+  </div>
+
+  <div class="numeros">
+    <div class="cont">
+      <div class="numero"><strong>+1.000</strong><span>adoções responsáveis</span></div>
+      <div class="numero"><strong>600</strong><span>castrações em parceria com ONG</span></div>
+      <div class="numero"><strong>+250</strong><span>cirurgias de alto custo</span></div>
+      <div class="numero"><strong>70 a 80</strong><span>animais sob nossos cuidados hoje</span></div>
+    </div>
+  </div>
+
+  <section class="quem" id="quem">
+    <div class="cont">
+      <figure class="quem-foto">
+        <img src="img/mae.jpg" alt="Foto de Marcia Kulaif, fundadora do Miu Mais Pet" width="720" height="900"
+             onerror="this.hidden=true; this.nextElementSibling.hidden=false;">
+        <div class="quem-sem-foto" hidden><svg viewBox="0 0 120 120" data-mascote data-feliz aria-hidden="true"></svg></div>
+        <figcaption>Marcia Kulaif · fundadora</figcaption>
+      </figure>
+      <div>
+        <div class="eyebrow">Quem está por trás</div>
+        <h2>Marcia Kulaif</h2>
+        <p class="lead">Protetora de animais na Baixada Santista e fundadora do Miu Mais Pet.</p>
+        <p>Aqui no Brasil, somos chamadas de protetoras de animais. Nós resgatamos, cuidamos e encaminhamos para a adoção. Às vezes, passam-se anos e ainda estamos cuidando daquele bichinho que tiramos da rua correndo risco de vida.</p>
+        <p>Cuido de animais há quase 10 anos. Na pandemia, chegamos a quase 300 animais. Foi uma loucura: não tínhamos, e ainda não temos, ajuda do município nem do estado, e foi decidido que animal não era prioridade. Sem castrações gratuitas, tudo precisava ser pago, e todos nós nos endividamos. Assim começou a nossa história.</p>
+        <p>Hoje cuidamos de 70 a 80 animais no nosso abrigo, que está prestes a se mudar para um espaço maior. Em parceria com uma ONG, por meio de uma emenda parlamentar de uma deputada federal, castramos cerca de 600 animais. Também já fizemos mais de 250 cirurgias de alto custo e muito mais de mil adoções.</p>
+        <p>Esses animais sofrem de invisibilidade social: muitas vezes, o bichinho está doente na rua, e as pessoas mudam de calçada para não esbarrar nele. Nosso trabalho é fazer adoções responsáveis e levantar a bandeira da castração, para diminuir os mais de 30 milhões de animais que vivem nas ruas do Brasil.</p>
+        <blockquote class="citacao">"Fazemos um trabalho de formiguinha, que, no fundo, é um trabalho de elefante."<cite>Marcia Kulaif</cite></blockquote>
+      </div>
+    </div>
+  </section>
+
+  <section id="adote">
+    <div class="cont">
+      <div class="eyebrow">Adote</div>
+      <h2>Como adotar</h2>
+      <p class="lead">As adoções acontecem nas nossas feiras, em pet shops parceiros. Lá você conhece os animais pessoalmente e sai com seu novo amigo vacinado.</p>
+      <div class="passos">
+        <div class="passo">
+          <h3>Venha a uma feira</h3>
+          <p>As datas e os locais das feiras são divulgados no nosso Instagram. Cada feira acontece em um pet shop parceiro.</p>
+        </div>
+        <div class="passo">
+          <h3>Conheça os animais</h3>
+          <p>Converse com a nossa equipe, conheça cada cão e gato e descubra qual combina com a sua casa e a sua rotina.</p>
+        </div>
+        <div class="passo">
+          <h3>Assine o termo pelo celular</h3>
+          <p>Leve RG ou CNH e um comprovante de residência. Você preenche o termo de adoção no celular, e o animal sai vacinado no mesmo dia.</p>
+        </div>
+      </div>
+      <div class="aviso-castra">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#1E4FA0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M12 11v6M12 7.5v.01"/></svg>
+        <p><strong>Castração:</strong> para quem mora na Baixada Santista, a castração é gratuita com os nossos parceiros. Fora da Baixada, ela fica por conta do novo tutor. Depois, é só enviar o comprovante com a carteira de vacinação.</p>
+      </div>
+      <div class="adote-acoes">
+        <a class="btn btn-azul" href="https://www.instagram.com/projetomiumaispet/" target="_blank" rel="noopener">Ver próximas feiras no Instagram</a>
+        <a class="btn btn-claro" id="link-termo" href="#" hidden>Preencher termo de adoção</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="doe" id="doe">
+    <div class="cont">
+      <div>
+        <div class="eyebrow" style="color:var(--azul)">Doe</div>
+        <h2>Sua doação vira cuidado</h2>
+        <p class="lead">O Miu Mais Pet é um projeto independente e se mantém com doações. Qualquer valor ajuda a manter os animais saudáveis até encontrarem uma família.</p>
+        <ul class="destinos">
+          <li><span><svg viewBox="0 0 24 24" fill="none" stroke="#FFC531" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10h18l-2 9a2 2 0 0 1-2 1.6H7A2 2 0 0 1 5 19z"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></span>Ração e areia</li>
+          <li><span><svg viewBox="0 0 24 24" fill="none" stroke="#FFC531" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 2 4 4M17 7l3-3M19 9 8.7 19.3a2.4 2.4 0 0 1-3.4 0l-.6-.6a2.4 2.4 0 0 1 0-3.4L15 5"/><path d="m9 11 4 4M5 19l-3 3"/></svg></span>Vacinas e vermífugos</li>
+          <li><span><svg viewBox="0 0 24 24" fill="none" stroke="#FFC531" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21C6 17 3 13.7 3 10a4.5 4.5 0 0 1 9-1.5A4.5 4.5 0 0 1 21 10c0 3.7-3 7-9 11z"/></svg></span>Castrações e tratamentos</li>
+        </ul>
+      </div>
+
+      <div class="pix">
+        <h3>
+          <svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true"><path fill="#32BCAD" d="M5.3 5.5a3 3 0 0 1 2.1.9l3.1 3.1a.7.7 0 0 0 1 0l3.1-3.1a3 3 0 0 1 2.1-.9h.4L13.2 1.6a3.1 3.1 0 0 0-4.4 0L5 5.5zm11.4 13a3 3 0 0 1-2.1-.9l-3.1-3.1a.7.7 0 0 0-1 0l-3.1 3.1a3 3 0 0 1-2.1.9h-.3l3.9 3.9a3.1 3.1 0 0 0 4.4 0l3.9-3.9zM22.4 8.8 20 6.4h-1.3a2 2 0 0 0-1.4.6l-3.1 3.1a1.7 1.7 0 0 1-2.4 0L8.7 7a2 2 0 0 0-1.4-.6H5.5L3.1 8.8a3.1 3.1 0 0 0 0 4.4l2.4 2.4h1.8a2 2 0 0 0 1.4-.6l3.1-3.1a1.7 1.7 0 0 1 2.4 0l3.1 3.1a2 2 0 0 0 1.4.6H20l2.4-2.4a3.1 3.1 0 0 0 0-4.4z"/></svg>
+          Doe via Pix
+        </h3>
+        <div class="pix-valores" role="group" aria-label="Escolha um valor">
+          <button type="button" data-valor="20" aria-pressed="false">R$ 20</button>
+          <button type="button" data-valor="50" aria-pressed="false">R$ 50</button>
+          <button type="button" data-valor="100" aria-pressed="false">R$ 100</button>
+          <button type="button" data-valor="outro" aria-pressed="false">Outro valor</button>
+          <button type="button" data-valor="" aria-pressed="true">Sem valor</button>
+        </div>
+        <div class="pix-outro" id="pix-outro">
+          <label for="valor-outro">R$</label>
+          <input id="valor-outro" inputmode="decimal" placeholder="0,00">
+        </div>
+        <div class="pix-qr">
+          <div class="qr" id="qr" role="img" aria-label="QR Code Pix para doação"></div>
+          <div class="chave">
+            Chave Pix (CNPJ)
+            <strong id="chave">60.321.788/0001-60</strong>
+            Aponte a câmera do app do banco para o QR Code ou copie o código abaixo.
+          </div>
+        </div>
+        <button type="button" class="btn btn-azul" id="copiar-codigo">Copiar código Pix</button>
+        <button type="button" class="btn btn-claro" id="copiar-chave">Copiar só a chave</button>
+        <div class="ok" id="pix-ok" aria-live="polite"></div>
+        <p class="pix-nota">Confira o nome do recebedor no app do banco antes de confirmar.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="ajude">
+    <div class="cont">
+      <div class="eyebrow">Ajude</div>
+      <h2>Outras formas de ajudar</h2>
+      <p class="lead">Nem toda ajuda é em dinheiro. Veja como você pode fazer parte do projeto.</p>
+      <div class="formas">
+        <div class="forma">
+          <div class="ico" style="background:#FFF1C9"><svg viewBox="0 0 24 24" fill="none" stroke="#13254A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h18v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M5 14l1 7h12l1-7"/><circle cx="9" cy="5" r="1.5"/><circle cx="15" cy="5" r="1.5"/></svg></div>
+          <h3>Doe itens</h3>
+          <p>Ração, areia, cobertas, caminhas e remédios fazem diferença todos os dias.</p>
+        </div>
+        <div class="forma">
+          <div class="ico" style="background:#DCE8FA"><svg viewBox="0 0 24 24" fill="none" stroke="#1E4FA0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11 12 4l9 7v9H3z"/><path d="M12 17.5c-2.6-1.7-3.8-3-3.8-4.4a1.9 1.9 0 0 1 3.8-.5 1.9 1.9 0 0 1 3.8.5c0 1.4-1.2 2.7-3.8 4.4z"/></svg></div>
+          <h3>Seja lar temporário</h3>
+          <p>Receba um animal em casa por um tempo, até ele encontrar a família definitiva.</p>
+        </div>
+        <div class="forma">
+          <div class="ico" style="background:#FFE2DC"><svg viewBox="0 0 24 24" fill="none" stroke="#C2412D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.5a3.5 3.5 0 0 1 0 6.5M18 14a6.5 6.5 0 0 1 3.5 6"/></svg></div>
+          <h3>Seja voluntário</h3>
+          <p>Ajude nas feiras de adoção, no transporte dos animais ou com fotos e divulgação.</p>
+        </div>
+        <div class="forma">
+          <div class="ico" style="background:#E5F4EE"><svg viewBox="0 0 24 24" fill="none" stroke="#1F7A55" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 13.5 6.8 4M15.4 6.5l-6.8 4"/></svg></div>
+          <h3>Compartilhe</h3>
+          <p>Divulgar as feiras e os animais ajuda a levá-los até mais famílias.</p>
+        </div>
+      </div>
+      <div class="ajude-cta">
+        <a class="btn btn-whats" href="https://wa.me/5511991773863?text=Ol%C3%A1!%20Vim%20pelo%20site%20do%20Miu%20Mais%20Pet." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.4a.5.5 0 0 0 0-.4l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3z"/></svg> Fale conosco no WhatsApp</a>
+        <a class="btn btn-claro" href="https://ig.me/m/projetomiumaispet" target="_blank" rel="noopener">Fale conosco no Instagram</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sobre" id="sobre">
+    <div class="cont">
+      <div class="sobre-arte" aria-hidden="true"><svg viewBox="0 0 120 120" data-mascote data-feliz></svg></div>
+      <div>
+        <div class="eyebrow">Sobre</div>
+        <h2>Metade gato, metade cachorro, todo coração</h2>
+        <p>O Miu Mais Pet é um projeto independente de proteção animal de São Vicente. Há quase 10 anos, resgatamos cães e gatos, cuidamos da saúde de cada um e procuramos a família certa para eles.</p>
+        <p>As feiras de adoção acontecem em pet shops parceiros, e cada animal sai vacinado. Para quem mora na Baixada Santista, a castração é gratuita com clínicas parceiras. Tudo isso é feito com a ajuda de voluntários, parceiros e doações.</p>
+        <div class="fatos">
+          <span class="fato">Quase 10 anos</span>
+          <span class="fato">Cães e gatos</span>
+          <span class="fato">São Paulo · Baixada Santista</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="cont">
+    <div>
+      <a class="marca" href="#inicio"><svg viewBox="0 0 120 120" data-mascote aria-hidden="true"></svg><span>Miu <b>Mais</b> Pet</span></a>
+      <p>Adoção responsável de cães e gatos · São Vicente/SP</p>
+    </div>
+    <div>
+      <p>WhatsApp: <a href="https://wa.me/5511991773863?text=Ol%C3%A1!%20Vim%20pelo%20site%20do%20Miu%20Mais%20Pet." target="_blank" rel="noopener">Fale conosco</a></p>
+      <p>Instagram: <a href="https://www.instagram.com/projetomiumaispet/" target="_blank" rel="noopener">@projetomiumaispet</a></p>
+      <p>Pix (CNPJ): 60.321.788/0001-60</p>
+    </div>
+  </div>
+</footer>
+
+<a class="whats-flutuante" href="https://wa.me/5511991773863?text=Ol%C3%A1!%20Vim%20pelo%20site%20do%20Miu%20Mais%20Pet." target="_blank" rel="noopener" aria-label="Falar no WhatsApp"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.4a.5.5 0 0 0 0-.4l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3z"/></svg></a>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
+<script>
+// Link do termo de adoção online (cole aqui o link /exec quando o formulário estiver publicado)
+const LINK_TERMO = 'adocao/';
+
+const PIX = { chave: '60321788000160', nome: 'MIU MAIS PET', cidade: 'SAO VICENTE' };
+
+// Mascote: orelha de gato, orelha de cachorro e nariz em coração
+function mascote(feliz) {
+  const _id = 'cab' + (mascote.n = (mascote.n || 0) + 1);
+  const olhos = feliz
+    ? '<path d="M39 65q6-7 12 0M66 64q7-7 14 0" stroke="#13254A" stroke-width="4.5" stroke-linecap="round" fill="none"/>'
+    : '<circle cx="45" cy="63" r="4.6" fill="#13254A"/><circle cx="73" cy="62" r="5.2" fill="#13254A"/><circle cx="74.6" cy="60.4" r="1.3" fill="#fff"/>';
+  return '<path d="M24 52 30 14l26 22z" fill="#FFC531" stroke="#FFC531" stroke-width="6" stroke-linejoin="round"/>' +
+    '<path d="M31 27 33 41l10-4z" fill="#FF6F59"/>' +
+    '<ellipse cx="60" cy="66" rx="40" ry="35" fill="#FFC531"/>' +
+    '<clipPath id="' + _id + '"><ellipse cx="60" cy="66" rx="40" ry="35"/></clipPath>' +
+    '<path clip-path="url(#' + _id + ')" fill="#F2A541" d="M60 28q-4 6 0 12q4 6 0 12q-4 6 0 12q4 6 0 12q-4 6 0 12q4 6 0 12V110H110V28Z"/>' +
+    '<ellipse cx="73" cy="61" rx="11" ry="10" fill="#D4822A"/>' +
+    '<ellipse cx="66" cy="83" rx="15" ry="10" fill="#FFE29A"/>' +
+    '<path d="M73 33c19-13 41-5 35 28-2 18-13 28-21 17-5-9-8-28-14-45z" fill="#FF6F59"/>' + olhos +
+    '<path d="M60 89q8 6 13 0" stroke="#13254A" stroke-width="2.6" fill="none" stroke-linecap="round"/>' +
+    '<path d="M64.5 91h8.4v4.5a4.2 4.2 0 0 1-8.4 0z" fill="#FF8A7A"/><path d="M68.7 92v4" stroke="#E5604F" stroke-width="1.2" stroke-linecap="round"/>' +
+    '<path d="M58.5 85c-6.5-4.4-7.6-9.6-4.2-11 2-.8 3.6.4 4.2 2 .6-1.6 2.2-2.8 4.2-2 3.4 1.4 2.3 6.6-4.2 11z" fill="#FF6F59"/>' +
+    '<path d="M31 77 15 73.5M31 83.5l-15 3" stroke="#13254A" stroke-width="3.2" stroke-linecap="round"/>';
+}
+document.querySelectorAll('[data-mascote]').forEach(el => { el.innerHTML = mascote(el.hasAttribute('data-feliz')); });
+
+if (LINK_TERMO) { const l = document.getElementById('link-termo'); l.href = LINK_TERMO; l.hidden = false; }
+
+// Pix "copia e cola" (BR Code do Banco Central)
+function campo(id, valor) { return id + String(valor.length).padStart(2, '0') + valor; }
+function crc16(s) {
+  let crc = 0xFFFF;
+  for (let i = 0; i < s.length; i++) {
+    crc ^= s.charCodeAt(i) << 8;
+    for (let j = 0; j < 8; j++) crc = (crc & 0x8000) ? ((crc << 1) ^ 0x1021) & 0xFFFF : (crc << 1) & 0xFFFF;
+  }
+  return crc.toString(16).toUpperCase().padStart(4, '0');
+}
+function codigoPix(valor) {
+  let p = campo('00', '01') + campo('01', '11') +
+    campo('26', campo('00', 'BR.GOV.BCB.PIX') + campo('01', PIX.chave)) +
+    campo('52', '0000') + campo('53', '986') +
+    (valor ? campo('54', valor.toFixed(2)) : '') +
+    campo('58', 'BR') + campo('59', PIX.nome) + campo('60', PIX.cidade) +
+    campo('62', campo('05', '***')) + '6304';
+  return p + crc16(p);
+}
+
+let valorAtual = 0;
+function atualizarQR() {
+  const qrEl = document.getElementById('qr');
+  if (!window.qrcode) { qrEl.textContent = 'Use a chave abaixo.'; return; }
+  const qr = qrcode(0, 'M');
+  qr.addData(codigoPix(valorAtual));
+  qr.make();
+  qrEl.innerHTML = qr.createSvgTag({ cellSize: 4, margin: 0, scalable: true });
+}
+
+const botoes = document.querySelectorAll('.pix-valores button');
+const outro = document.getElementById('pix-outro');
+const inputOutro = document.getElementById('valor-outro');
+botoes.forEach(b => b.addEventListener('click', () => {
+  botoes.forEach(x => x.setAttribute('aria-pressed', String(x === b)));
+  const v = b.dataset.valor;
+  outro.classList.toggle('mostrar', v === 'outro');
+  if (v === 'outro') { inputOutro.focus(); valorAtual = lerOutro(); }
+  else valorAtual = v ? Number(v) : 0;
+  atualizarQR();
+}));
+function lerOutro() {
+  const n = Number(inputOutro.value.replace(/\./g, '').replace(',', '.'));
+  return n > 0 ? Math.round(n * 100) / 100 : 0;
+}
+inputOutro.addEventListener('input', () => { valorAtual = lerOutro(); atualizarQR(); });
+
+function copiar(texto, msg) {
+  const ok = document.getElementById('pix-ok');
+  const feito = () => { ok.textContent = msg; setTimeout(() => { ok.textContent = ''; }, 4000); };
+  if (navigator.clipboard) navigator.clipboard.writeText(texto).then(feito).catch(() => { prompt('Copie o código:', texto); });
+  else prompt('Copie o código:', texto);
+}
+document.getElementById('copiar-codigo').addEventListener('click', () =>
+  copiar(codigoPix(valorAtual), 'Código copiado! Cole no app do banco em Pix > Copia e Cola.'));
+document.getElementById('copiar-chave').addEventListener('click', () => copiar(PIX.chave, 'Chave copiada!'));
+
+atualizarQR();
+</script>
+</body>
+</html>
