@@ -285,7 +285,7 @@
         </div>
         <div class="pix-box">
           <div class="qr" id="qr" role="img" aria-label="QR Code Pix para doação"></div>
-          <div class="chave">Chave Pix (CNPJ)<strong>60.321.788/0001-60</strong>Abra o app do banco e escaneie o QR Code, ou copie o código.</div>
+          <div class="chave">Chave Pix (CNPJ)<strong>69.882.945/0001-80</strong>Abra o app do banco e escaneie o QR Code, ou copie o código.</div>
         </div>
         <button type="button" class="primario" id="copiar-pix">Copiar código Pix</button>
         <div class="ok" id="pix-ok" aria-live="polite"></div>
@@ -604,7 +604,7 @@ function servidor() {
   Array.prototype.forEach.call(document.querySelectorAll('[data-mascote]'), function (el) { el.innerHTML = mascote(el.hasAttribute('data-feliz')); });
 
   // Doação via Pix (BR Code "copia e cola" do Banco Central)
-  var PIX = { chave: '60321788000160', nome: 'MIU MAIS PET', cidade: 'SAO VICENTE' };
+  var PIX = { chave: '69882945000180', nome: 'MIU MAIS PET', cidade: 'SAO VICENTE' };
   var valorPix = 0;
   function campoPix(id, v) { return id + String(v.length).padStart(2, '0') + v; }
   function crc16(t) {
